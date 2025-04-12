@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #07080c;
+  color: white;
+  text-align: center;
+}
+
+section {
+  padding: 50px;
+}
+
+/* Landing Section */
+#landing {
+  background-image: url("../assets/images/earth.jpg");
+  background-repeat: no-repeat;
+  background-position: center -900px;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#landing h1 {
+  font-size: 3em;
+  animation: glow 2s infinite alternate;
+}
+
+.start-btn {
+  padding: 10px 20px;
+  background-color: rgba(106, 137, 223, 0.2);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* Apology Section */
+#apology {
+  position: relative; /* Makes #apology a positioning context for its children */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents overflow of stars */
+}
+
+.apology-message {
+  text-align: justify;
+}
+
+/* Stars Animation */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1; /* Place stars behind the text */
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0; /* Start invisible */
+  animation: blink 1.5s infinite; /* Blink animation */
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Generate stars */
+@keyframes starAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Encouragement Section */
+
+#encouragement {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-image: url("../assets/images/space.jpg"); /* Path to your space-themed image */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.constellation {
+  width: 85vw;
+  height: 85vh;
+}
+
+/* Personal Touch Section */
+#personal-touch {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a; /* Example background color */
+}
+
+.moon {
+  width: 200px;
+}
+
+.click-moon {
+  margin-top: 20px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Closing Section */
+#closing {
+  height: auto; /* Adjust height as needed */
+}
+
+#closing > button {
+  margin: 20px auto; /* Center the button */
+  padding: 10px 20px;
+  background-color: rgba(106, 137, 223, 0.2);
+  color: white;
+  border: 2px solid rgb(190, 205, 245);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  #landing {
+    background-position: center -500px; /* Adjusted for phone view */
+    background-size: cover; /* Ensures the image covers the screen */
+  }
+
+  #landing h1 {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px rgb(174, 0, 255),
+      0 0 30px rgb(21, 11, 165);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px rgb(174, 0, 255),
+      0 0 40px rgb(21, 11, 165);
+  }
+}
