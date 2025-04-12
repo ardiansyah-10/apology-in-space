@@ -107,7 +107,7 @@ section {
 }
 
 .constellation {
-  width: 85vw;
+  /* width: 85vw; */
   height: 85vh;
 }
 
@@ -145,6 +145,10 @@ section {
   cursor: pointer;
 }
 
+audio {
+  display: none; /* Hides the audio player */
+}
+
 @media only screen and (max-width: 768px) {
   #landing {
     background-position: center -500px; /* Adjusted for phone view */
@@ -153,6 +157,11 @@ section {
 
   #landing h1 {
     font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .constellation {
+    width: 85vw;
+    height: 85vh;
   }
 }
 
